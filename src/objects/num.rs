@@ -135,8 +135,8 @@ int_fits_c_long!(i64);
 
 #[cfg(all(target_pointer_width="64", not(target_os="windows")))]
 int_fits_c_long!(isize);
-#[cfg(any(target_pointer_width="32", target_os="windows"))]
-int_fits_larger_int!(isize, i64);
+// #[cfg(any(target_pointer_width="32", target_os="windows"))]
+// int_fits_larger_int!(isize, i64);
 
 int_fits_larger_int!(usize, u64);
 
@@ -281,4 +281,3 @@ mod test {
         assert!(obj.extract::<i64>().is_err());
     }
 }
-
